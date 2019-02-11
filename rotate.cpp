@@ -1,14 +1,8 @@
-
-/*
- * hello.c
- * This is a simple, introductory OpenGL program.
- */
 #include <stdlib.h>
 
 #include <GL/gl.h>
 #include <GL/glut.h>
 #include <GL/glu.h>
-
 
 void display(void)
 {
@@ -22,15 +16,18 @@ void display(void)
    glLoadIdentity();
 
    /* Viewing transformation */
-   gluLookAt(0.0, 0.0, 5.0,   /* Eye */
-             0.0, 0.0, 0.0,   /* Look at */
-             0.0, 1.0, 0.0);  /* Up vector */
+//    gluLookAt(0.0, 0.0, 5.0,   /* Eye */
+//              0.0, 0.0, 0.0,   /* Look at */
+//              0.0, 1.0, 0.0);  /* Up vector */
    /* Modeling transformation */
-   glScalef(1.0, 2.0, 1.0);   
+//    glScalef(1.0, 2.0, 1.0);   
    
    /* Create a unit cube whose center is at (0, 0, 0) */
 //    glTranslatef(1.5,1,1);
-   glutWireCube(1.0);
+//    glutWireCube(1.0);
+// glTranslatef(1.0, 1.0, 1.0);
+glRotatef(45.0, 0.0, 0.0, 0.0);
+glutSolidCube(1.0);
 
 //    glBegin(GL_QUADS);
 //     glVertex3f(-1.0f, -1.0, -1.0);
@@ -50,6 +47,9 @@ void init (void)
    /* select clearing color 	*/
    glClearColor (0.0, 0.0, 0.0, 0.0);
    glShadeModel(GL_FLAT);
+    glMatrixMode(GL_PROJECTION);
+   glLoadIdentity();
+   glOrtho(0.0, 5.0, 0.0, 1.0, -5.0, 5.0);
 }
 
 void reshape(int w, int h)
@@ -66,7 +66,6 @@ void reshape(int w, int h)
    glMatrixMode(GL_MODELVIEW);
 }
 
-
 int main(int argc, char** argv)
 {
    glutInit(&argc, argv);
@@ -76,7 +75,7 @@ int main(int argc, char** argv)
    glutCreateWindow (argv[0]);
    init();
    glutDisplayFunc(display); 
-   glutReshapeFunc(reshape);
+//    glutReshapeFunc(reshape);
    glutMainLoop();
    return 0;   /* We'll never be here.*/
 }
