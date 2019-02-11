@@ -18,13 +18,15 @@ void display(void)
    /* draw white polygon (rectangle) with corners at
     * (0.25, 0.25, 0.0) and (0.75, 0.75, 0.0)  
     */
-//    glColor3f (0.5, 1.0, 1.0);
-//    glBegin(GL_POLYGON);
-//       glVertex3f (0.25, 0.25, 0.0);
-//       glVertex3f (0.75, 0.25, 0.0);
-//       glVertex3f (0.75, 0.75, 0.0);
-//       glVertex3f (0.25, 0.75, 0.0);
-//    glEnd();
+   glRotatef(45.0, 0.0, 0.0, 0.0);
+   glColor3f (0.5, 1.0, 1.0);
+   glutSolidCube(1.0);
+   // glBegin(GL_POLYGON);
+   //    glVertex3f (0.25, 0.25, 0.0);
+   //    glVertex3f (0.75, 0.25, 0.0);
+   //    glVertex3f (0.75, 0.75, 0.0);
+   //    glVertex3f (0.25, 0.75, 0.0);
+   // glEnd();
 
    /* don't wait!  
     * start processing buffered OpenGL routines 
@@ -32,7 +34,7 @@ void display(void)
    glFlush ();
 }
 
-void init (void) 
+void init (void)
 {
    /* select clearing color 	*/
    glClearColor (0.0, 0.0, 0.0, 0.0);
