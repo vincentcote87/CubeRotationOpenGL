@@ -2,7 +2,7 @@
 #define DISPLAY_INFO "First OpenGL Program"
 
 #include <stdlib.h>  // Useful for the following includes.
-#include <stdio.h>    
+#include <stdio.h>
 #include <string.h>  // For spring operations.
 
 #include <GL/gl.h>   // OpenGL itself.
@@ -47,7 +47,7 @@ void CallBackRenderScene(void)
    glLoadIdentity(); 
 
    // Move the object back from the screen.
-   glTranslatef(1.0f,1.0f,Z_Off);
+   glTranslatef(0.0f,0.0f,Z_Off);
 
    // Rotate the calculated amount.
    glRotatef(X_Rot,0.0f,1.0f,0.0f);
@@ -139,8 +139,10 @@ void CallBackRenderScene(void)
    glutSwapBuffers();
 
    // Now let's do the motion calculations.
-   X_Rot+=X_Speed; 
-   Y_Rot+=Y_Speed; 
+   X_Rot+=X_Speed;
+   Y_Rot+=Y_Speed;
+       printf("printf to do debugging.\n\n");
+
 }
 
 ////////////////////////////////////////////////////////////

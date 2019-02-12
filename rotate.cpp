@@ -59,8 +59,6 @@ int main(int argc, char** argv) {
    init ();
    glutDisplayFunc(display);
    glutMouseFunc(mouse);
-      printf("cx = %f, cy = %f, cz = %f, angle = %f \n", Cx, Cy, Cz, angle);
-
    glutMainLoop();
    return 0;   /* We'll never be here.*/
 }
